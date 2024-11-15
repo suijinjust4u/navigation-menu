@@ -1,0 +1,138 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+  overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #3498db; /* Initial blue color */
+  color: white;
+  z-index: 1000;
+  padding: 15px 0;
+  text-align: center;
+  transition: background-color 0.5s ease, transform 0.5s ease, opacity 0.5s ease;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeInNavbar 1s forwards; /* Fade in navbar on load */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in animation for navbar */
+@keyframes fadeInNavbar {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar ul li {
+  margin: 0 20px;
+  position: relative;
+}
+
+.navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px 20px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(52, 152, 219, 1) 0%, rgba(155, 89, 182, 1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.navbar ul li a:hover {
+  background: linear-gradient(90deg, rgba(255, 94, 0, 1) 0%, rgba(255, 206, 87, 1) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  border-radius: 5px;
+}
+
+/* Gradient transitions for menu items */
+.navbar ul li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background-image: linear-gradient(90deg, #ff9ff3, #feca57, #48dbfb);
+  left: 0;
+  bottom: -5px;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Section Styles */
+section {
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 1s ease;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInSection 1s forwards;
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeInSection {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Different background colors for each section */
+#home {
+  background-color: #ff6b6b; /* Coral red */
+  color: white;
+}
+
+#about {
+  background-color: #48dbfb; /* Light blue */
+  color: white;
+}
+
+#services {
+  background-color: #1dd1a1; /* Mint green */
+  color: white;
+}
+
+#contact {
+  background-color: #ff9ff3; /* Light pink */
+  color: white;
+}
+
+/* Scroll effects */
+.scrolled {
+  background-color: #1abc9c; /* Changes to teal when scrolled */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px);
+  transition: transform 0.5s ease, background-color 0.5s ease;
+  opacity: 1;
+}
